@@ -1,0 +1,11 @@
+ <!-- Bootstrap -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+{% block content %}
+    <div class="blog-entry text-center">
+        <h1>{{ object.name }}</h1>
+        <p>{{ object.description }}<br>{{ object.release_date }}</p>
+        <a href="/">geri</a>
+        
+    </div>
+
+{% endblock content %}

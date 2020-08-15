@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>anasayfa | Duvar</title>
+    <meta name="copyright" content="(c) 2020" />
+    <meta name="distribution" content="global" />
+    <meta name="generator" content="Visual Sudio Code" />
+    <meta name ="keyword" content="">
+    <meta name="description" content="">
+    <meta name="author" content="İsmail Arındı, ismail.arindi.000@gmail.com" />
+    <title>my blog</title>
+    <!-- icon -->
+    <link rel="icon" href="{% static '/img/favicon.ico' %}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom fonts and icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" integrity="sha512-yxSQDoat2NPQ9U4mKdYra2YNenVsnRuGxVvyrirmrDKzwOdxKJVqkDEvQ17pL/PJ6B7n2n77Xm6d62bMjCBqCQ==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    <!--main css-->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body class="text-center">
+    <header>
+        <h1>My blog</h1><hr>
+        <form id="search">
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-3">
+                <input type="search" class="form-control form-control-lg" placeholder="search..." name = "form">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-success">search</button>
+              </div>
+            </div>
+          </form>
+   </header>
+    <section>
+
+        <div class="blog-entry">
+          {% for i in queryset %}
+            <p><spam style="color:chartreuse;"><b>{{ i.name }}</b></spam><br>{{ i.description }}<br>{{ i.release_date }}</p>
+            <a href="{% url 'blog' i.pk %}">blog sayfasına git</a>
+          {% endfor %}  
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
+</body>
+</html>
